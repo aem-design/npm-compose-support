@@ -1,6 +1,6 @@
 # AEM.Design Compose Support
 
-[![build_status](https://github.com/aem-design/npm-compose-support/workflows/ci/badge.svg)](https://github.com/aem-design/npm-compose-support/actions?workflow=ci)
+[![build_status](https://github.com/aem-design/npm-compose-support/workflows/build/badge.svg)](https://github.com/aem-design/npm-compose-support/actions?workflow=build)
 [![github license](https://img.shields.io/github/license/aem-design/npm-compose-support)](https://github.com/aem-design/npm-compose-support) 
 [![github issues](https://img.shields.io/github/issues/aem-design/npm-compose-support)](https://github.com/aem-design/npm-compose-support) 
 [![github last commit](https://img.shields.io/github/last-commit/aem-design/npm-compose-support)](https://github.com/aem-design/npm-compose-support) 
