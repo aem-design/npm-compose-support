@@ -17,5 +17,8 @@
   "devDependencies": {
     "chalk": "^2.4.2",
     "ts-node": "^8.4.1"
+  },
+  "peerDependencies": {
+    "typescript": "^3.6.4"
   }
 }
