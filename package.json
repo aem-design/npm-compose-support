@@ -55,7 +55,7 @@
       "pre-commit": "npm run lint"
     }
   },
-  "version": "1.1.0",
+  "version": "1.2.0",
   "dependencies": {
     "chalk": "^3.0.0"
   },
