@@ -1,11 +1,8 @@
 import chalk from 'chalk'
 
-export enum LogType {
-  ERROR = 'error',
-  INFO = 'info',
-  LOG = 'log',
-  WARNING = 'warn',
-}
+import {
+  LogType,
+} from './types'
 
 // Internal
 const LOG_TYPES_COLOURS = {

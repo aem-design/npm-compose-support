@@ -6,8 +6,7 @@
     "yarn": ">= 1.10.x"
   },
   "files": [
-    "dist/",
-    "types/*.d.ts"
+    "dist/"
   ],
   "keywords": [
     "aem",
@@ -16,11 +15,17 @@
     "compose",
     "node",
     "logging",
-    "log"
+    "log",
+    "front end",
+    "front-end",
+    "frontend",
+    "typescript"
   ],
   "license": "Apache-2.0",
-  "main": "dist/index.js",
-  "types": "types/index.d.ts",
+  "main": "dist/commonjs",
+  "module": "dist/module",
+  "types": "dist/types",
+  "sideEffects": false,
   "name": "@aem-design/compose-support",
   "repository": {
     "type": "git",
@@ -33,31 +38,34 @@
     "access": "public"
   },
   "scripts": {
-    "build": "npm run clean && npm run build.compile",
-    "build.compile": "cross-env NODE_ENV=production tsc",
+    "build": "npm run clean && npm run build.module && npm run build.commonjs && npm run build.types",
+    "build.module": "tsc --module es2015 --outDir dist/module --declaration false",
+    "build.commonjs": "tsc --module commonjs --outDir dist/commonjs --declaration false",
+    "build.types": "tsc --emitDeclarationOnly --declaration true --declarationDir dist/types",
+    "build.ast": "api-extractor run --local --verbose",
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.ts'",
+    "prepack": "npm run build",
     "postversion": "npm run test && git push && git push --tags",
     "watch": "tsc --watch"
   },
   "husky": {
     "skipCI": true,
     "hooks": {
-      "pre-commit": "npm run build"
+      "pre-commit": "npm run lint"
     }
   },
   "version": "1.1.0",
   "dependencies": {
-    "chalk": "^2.4.2"
+    "chalk": "^3.0.0"
   },
   "devDependencies": {
-    "@types/node": "^12.12.3",
-    "@typescript-eslint/eslint-plugin": "^2.6.0",
-    "@typescript-eslint/parser": "^2.6.0",
-    "cross-env": "^6.0.3",
-    "eslint": "^5.16.0",
-    "husky": "^3.0.9",
-    "tslint": "^5.20.0",
-    "typescript": "^3.6.4"
+    "@types/node": "^13.7.7",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.3",
+    "typescript": "^3.8.3"
   }
 }
